@@ -65,10 +65,11 @@ client.on('messageCreate', async message => {
     summoners = summoners.map(str => encodeURIComponent(str))
     let summonersURLString = summoners.join(',');
 
+    message.channel.sendTyping()
+
     const URL = `https://u.gg/multisearch?summoners=${summonersURLString}&region=${uggRegion}`
     const filename = await takeUggScreenShot(URL)
 
-    message.channel.sendTyping()
     await message.reply({ files: [`./${filename}`] });
     await message.delete()
 
