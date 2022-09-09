@@ -22,7 +22,8 @@ async function takeUggScreenShot(url)
     const padding = 20;
 
     const browser = await puppeteer.launch({
-      executablePath: '/usr/bin/chromium-browser'
+      executablePath: '/usr/bin/chromium-browser',
+      ignoreDefaultArgs: ['--no-sandbox']
     })
     let page = await browser.newPage();
     await page.setViewport({ width: 1920, height: 1080})
