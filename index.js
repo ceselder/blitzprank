@@ -26,7 +26,7 @@ async function takeUggScreenShot(url)
       args: ['--no-sandbox']
     })
     let page = await browser.newPage();
-    await page.setViewport({ width: 1920, height: 1080})
+    await page.setViewport({ width: 1280, height: 720})
     await page.goto(url);
     await page.click(`button[class=' css-47sehv']`); //cookies accept
     await page.mouse.wheel({deltaY: -150});
