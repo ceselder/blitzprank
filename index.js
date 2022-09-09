@@ -23,7 +23,6 @@ async function takeUggScreenShot(url)
 
     const browser = await puppeteer.launch({
       headless: true,
-      executablePath: '/usr/bin/chromium-browser',
       args: ['--no-sandbox']
     })
     let page = await browser.newPage();
