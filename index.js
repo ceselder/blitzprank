@@ -22,11 +22,12 @@ async function takeUggScreenShot(url)
     const padding = 20;
 
     const browser = await puppeteer.launch({
+      headless: true,
       executablePath: '/usr/bin/chromium-browser',
       args: ['--no-sandbox']
     })
     let page = await browser.newPage();
-    await page.setViewport({ width: 1280, height: 720})
+    await page.setViewport({ width: 1200, height: 500})
     await page.goto(url);
     await page.click(`button[class=' css-47sehv']`); //cookies accept
     await page.mouse.wheel({deltaY: -150});
